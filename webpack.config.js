@@ -4,7 +4,6 @@ const path = require('path');
 
 module.exports = {
   entry: './src/server.js',
-  mode: 'development',
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: 'server.js',
@@ -20,10 +19,13 @@ module.exports = {
     })
   ],
   module: {
-    rules: [{ 
-      test: /\.js$/, 
+    loaders: [{
+      test: /\.jsx?$/,
       exclude: /node_modules/, 
-      loader: "babel-loader"
+      loader: "babel-loader",
+      query:{
+        presets:['react']
+      }
     }]
-   }
+  }
 };

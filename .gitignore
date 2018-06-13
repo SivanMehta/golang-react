@@ -60,5 +60,6 @@ typings/
 # next.js build output
 .next
 
-# webpack stuff
+# webpack stuff and golang
 dist/
+*.out
